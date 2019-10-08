@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+<!-- Day 9
+What i learnt
+Dev Tools while coding in JS as console function, as war,info,error,timeEnd and groupCollapsed
+-->
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+
+    //regular
+    console.log('umme');
+
+    //interpolat
+    console.log('Hello I am a %s string!', '+po');
+
+    //style
+    console.log('%c I am some ','font-size:10px')
+
+    //warn
+    console.warn('oh no')
+
+    //error
+    console.error('oh no')
+
+    //info
+    console.info('oh no')
+
+    //clear
+   // console.clear('clear')
+
+    //viewing dom
+    // console.log(p);
+    // console.dir(p);
+    // console.clear();
+    console.log('fetch time');
+fetch('https://api.github.com/users/wesbos')
+.then(data=>data.json())
+.then(data => {
+    console.timeEnd('fetching data');
+    console.log(data);
+})
+dogs.forEach(dog=>{
+    console.groupCollapsed(`${dog.name}`);
+    console.log(`${dog.name}`);
+})
+
+
+
+</script>
